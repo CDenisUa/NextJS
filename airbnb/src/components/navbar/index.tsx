@@ -1,7 +1,12 @@
 // Core
 import { FC } from "react";
 // Components
-import { Container, Logo, Search } from "@/components";
+import { 
+  Container,
+   Logo, 
+  Search, 
+  UserMenu 
+} from "@/components";
 
 const Navbar: FC = () => {
   return (
@@ -24,6 +29,7 @@ const Navbar: FC = () => {
           >
             <Logo />
             <Search />
+            <UserMenu />
           </div>
         </Container>
       </div>
