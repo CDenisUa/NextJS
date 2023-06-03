@@ -8,11 +8,14 @@ const Logo: FC = () => {
     const router = useRouter();
     return (
         <Image 
+            priority
             width="100"
             height="100"
             src="/images/logo.png"
             alt='Logo'
-            className="
+            className=" 
+                w-auto 
+                h-auto
                 hidden 
                 md:block 
                 cursor-pointer
