@@ -85,10 +85,6 @@ const UserMenu: FC = () => {
                                 onClick={() => {}}
                                 label='Sign up'
                             />
-                            <MenuItem 
-                                onClick={() => {}}
-                                label='Login'
-                            />
                         </div>
                     </div>
             }
