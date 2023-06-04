@@ -16,7 +16,12 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <Modal />
+        {/* <Modal 
+          actionLabel='Hello World'
+          onSubmit={() => {}}
+          onClose={() => {}}
+          isOpen 
+        /> */}
         <Navbar />
         {children}
       </body>
