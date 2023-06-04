@@ -1,9 +1,10 @@
 // Core
 import { Nunito } from 'next/font/google';
+import Head from 'next/head';
 // Styles
 import './globals.css'
 // Components
-import { Navbar, Modal } from '@/components';
+import { Navbar, RegisterModal } from '@/components';
 
 const font = Nunito({ subsets: ['latin'] });
 
@@ -15,13 +16,11 @@ export const metadata = {
 export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/public/favicon.ico" />
+      </Head>
       <body className={font.className}>
-        {/* <Modal 
-          actionLabel='Submit'
-          onSubmit={() => {}}
-          onClose={() => {}}
-          isOpen 
-        /> */}
+        <RegisterModal />
         <Navbar />
         {children}
       </body>
