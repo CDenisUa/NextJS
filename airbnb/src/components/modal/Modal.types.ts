@@ -8,7 +8,7 @@ export interface ModalPropTypes {
     footer?: ReactElement;
     actionLabel: string;
     disabled?: boolean;
-    secondaryLabel?: string;
+    secondaryActionLabel?: string;
     onClose: () => void;
     onSubmit: () => void;
     secondaryAction?: () => void;

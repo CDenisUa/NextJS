@@ -17,7 +17,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
     <html lang="en">
       <body className={font.className}>
         {/* <Modal 
-          actionLabel='Hello World'
+          actionLabel='Submit'
           onSubmit={() => {}}
           onClose={() => {}}
           isOpen 

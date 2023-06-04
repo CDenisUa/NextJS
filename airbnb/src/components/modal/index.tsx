@@ -16,7 +16,7 @@ const Modal: FC<ModalPropTypes> = (props) => {
         footer,
         actionLabel,
         disabled,
-        secondaryLabel,
+        secondaryActionLabel,
         onClose,
         onSubmit,
         secondaryAction
@@ -166,7 +166,19 @@ const Modal: FC<ModalPropTypes> = (props) => {
                                         w-full
                                     '
                                 >
-                                    <Button />
+                                    {
+                                        secondaryAction && secondaryActionLabel && 
+                                            <Button 
+                                                onClick={handleSecondaryAction}
+                                                disabled={disabled}
+                                                label={secondaryActionLabel}
+                                            />
+                                    }
+                                    <Button 
+                                        onClick={handleSubmit}
+                                        disabled={disabled}
+                                        label={actionLabel}
+                                    />
                                 </div>
                             </footer>
                         </div>
