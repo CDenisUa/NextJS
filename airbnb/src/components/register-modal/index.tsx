@@ -14,6 +14,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { useRegisterModal } from '@/hooks';
 // Components
 import { Modal } from '@/components';
+import BodyContent from './components/body-content/BodyContent';
 
 const RegisterModal: FC = () => {
     const registerModal = useRegisterModal();
@@ -52,6 +53,7 @@ const RegisterModal: FC = () => {
             actionLabel="Continue"
             onClose={registerModal.onClose}
             onSubmit={handleSubmit(onSubmit)}
+            body={<BodyContent />}
         />
     );
 };

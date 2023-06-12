@@ -2,24 +2,15 @@
 // Core
 import { FC } from "react";
 // Components
-import { 
-  Container,
-   Logo, 
-  Search, 
-  UserMenu 
-} from "@/components";
+import { Container, Logo, Search, UserMenu } from "@/components";
 
 const Navbar: FC = () => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
-      <div
-        className="
-                py-4 
-                border-b-[1px]
-                "
-      >
+      <div className=" py-4 border-b-[1px]">
         <Container>
-          <div className="
+          <div
+            className="
                 flex 
                 flex-row 
                 items-center 
