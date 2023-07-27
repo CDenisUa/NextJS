@@ -8,6 +8,6 @@ export interface InputPropTypes {
     disabled?: boolean;
     formatPrice?: boolean;
     required?: boolean;
-    register?:  UseFormRegister<FieldValues>;
-    errors: FieldErrors;
+    register:  UseFormRegister<FieldValues>;
+    errors: FieldErrors<FieldValues>;
 }
