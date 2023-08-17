@@ -5,6 +5,7 @@ import Head from 'next/head';
 import './globals.css'
 // Components
 import { Navbar, RegisterModal } from '@/components';
+import ToasterProvider from '@/providers/ToasterProvider';
 
 const font = Nunito({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <body className={font.className}>
+        <ToasterProvider />
         <RegisterModal />
         <Navbar />
         {children}

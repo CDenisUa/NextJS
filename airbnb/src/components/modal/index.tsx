@@ -180,6 +180,7 @@ const Modal: FC<ModalPropTypes> = (props) => {
                                         label={actionLabel}
                                     />
                                 </div>
+                                {footer}
                             </footer>
                         </div>
                     </div>

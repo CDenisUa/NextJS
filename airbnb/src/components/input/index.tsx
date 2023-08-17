@@ -61,9 +61,10 @@ const Input: FC<InputPropTypes> = (props) => {
         peer-placeholder-shown:scale-100 
         peer-placeholder-shown:translate-y-0 
         peer-focus:scale-75 
-        peer-focus:-translate-y-4
+        peer-focus:-translate-y-4 
         ${formatPrice ? "left-9" : "left-4"} 
         ${errors[id] ? "border-rose-500" : "border-zinc-400"}
+        ${errors[id] ? "text-rose-500": "text-zinc-400"}
       `}
       >
         {label}

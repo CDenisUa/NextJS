@@ -1,6 +1,7 @@
 "use client";
 // Core
 import { FC, useState } from "react";
+import toast from "react-hot-toast";
 import axios from "axios";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 // Images
@@ -11,6 +12,7 @@ import { useRegisterModal } from "@/hooks";
 // Components
 import { Modal } from "@/components";
 import BodyContent from "./components/body-content/BodyContent";
+import FooterContent from "./components/footer-content/FooterContent";
 
 const RegisterModal: FC = () => {
   const registerModal = useRegisterModal();
@@ -36,7 +38,7 @@ const RegisterModal: FC = () => {
       .then(() => {
         registerModal.onClose();
       })
-      .catch((error) => console.error(error))
+      .catch((error) => toast.error('Something went wrong!'))
       .finally(() => setIsLoading(true));
   };
 
@@ -54,6 +56,9 @@ const RegisterModal: FC = () => {
           register={register}
           errors={errors}
         />
+      }
+      footer={
+        <FooterContent />
       }
     />
   );
