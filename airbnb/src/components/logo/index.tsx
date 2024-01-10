@@ -2,22 +2,22 @@
 // Core
 import { FC } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 
 const Logo: FC = () => {
-    const router = useRouter();
+    // const router = useRouter();
     return (
-        <Image 
+        <Image
             priority
             width="100"
             height="100"
             src="/images/logo.png"
             alt='Logo'
-            className=" 
-                w-auto 
+            className="
+                w-auto
                 h-auto
-                hidden 
-                md:block 
+                hidden
+                md:block
                 cursor-pointer
             "
         />
