@@ -1,4 +1,5 @@
 // Core
+import {NextPage} from "next";
 import { Inter } from 'next/font/google'
 // Styles
 import './globals.css'
@@ -10,7 +11,7 @@ export const metadata = {
   description: 'Next.js starter app',
 }
 
-export default function RootLayout({ children }) {
+const RootLayout: NextPage<OnlyChildrenType> = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -19,3 +20,5 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+export default RootLayout;
