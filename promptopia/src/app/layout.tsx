@@ -2,6 +2,11 @@
 import {NextPage} from "next";
 // Styles
 import '@/styles/global.css';
+// Components
+import {
+    Nav,
+    Provider,
+} from '@/components';
 
 export const metadata = {
     title: "Promptopia",
@@ -16,6 +21,7 @@ const RootLayout: NextPage<OnlyChildren> = ({children}) => {
                     <div className="gradient"/>
                 </div>
                 <main className='app'>
+                    <Nav />
                     {children}
                 </main>
             </body>
