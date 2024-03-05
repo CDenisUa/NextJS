@@ -13,7 +13,7 @@ import {
 } from 'next-auth/react';
 
 const Nav: FC = () => {
-    const isUserLoggedIn = true;
+    const {data: session} = useSession();
     const [providers, setProviders] = useState<unknown | null>(null);
     const [toggleDropDown, setToggleDropDown] = useState<boolean>(false);
     const signOut = () => {
@@ -38,13 +38,15 @@ const Nav: FC = () => {
                     height={30}
                     className='object-contain'
                     src='/assets/images/logo.svg'
+                    priority={false}
                     alt='Probptopia logo'
                 />
                 <p className='logo_text'>Promptopia</p>
             </Link>
+
             <div className='sm:flex hidden'>
                 {
-                    isUserLoggedIn ?
+                    session?.user ?
                         <div className='flex gap-3 md:gap-5'>
                             <Link
                                 className='black_btn'
@@ -65,8 +67,9 @@ const Nav: FC = () => {
                                 <Image
                                     width={37}
                                     height={37}
-                                    src="/assets/images/logo.svg"
+                                    src={session?.user?.image || "/assets/images/logo.svg"}
                                     className="rounded-full"
+                                    priority={false}
                                     alt="profile"
                                 />
                             </Link>
@@ -91,14 +94,15 @@ const Nav: FC = () => {
             </div>
             <div className='sm:hidden flex relative'>
                 {
-                    isUserLoggedIn ? (
-                        <div className='flex'>
+                    session?.user ? (
+                        <div className='flex cursor-pointer'>
                             <Image
                                 onClick={() => setToggleDropDown(prev => !prev)}
                                 width={37}
                                 height={37}
-                                src="/assets/images/logo.svg"
+                                src={session?.user?.image || "/assets/images/logo.svg"}
                                 className="rounded-full"
+                                priority={false}
                                 alt="profile"
                             />
                             {

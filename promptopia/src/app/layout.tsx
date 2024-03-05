@@ -17,13 +17,15 @@ const RootLayout: NextPage<OnlyChildren> = ({children}) => {
     return (
         <html lang='en'>
             <body>
+            <Provider session={null}>
                 <div className='main'>
                     <div className="gradient"/>
                 </div>
                 <main className='app'>
-                    <Nav />
+                    <Nav/>
                     {children}
                 </main>
+            </Provider>
             </body>
         </html>
     );
