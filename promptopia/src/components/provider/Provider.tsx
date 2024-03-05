@@ -1,9 +1,16 @@
+'use client'
 // Core
-import { FC } from 'react';
+import {FC} from 'react';
+import {SessionProvider} from 'next-auth/react';
+// Types
+import {ProviderPropTypes} from "./Provider.types";
 
-const Provider: FC = () => {
+const Provider: FC<ProviderPropTypes> = (props) => {
+    const {children, session} = props;
     return (
-        <div>Provider</div>
+        <SessionProvider session={session}>
+            {children}
+        </SessionProvider>
     );
 }
 
