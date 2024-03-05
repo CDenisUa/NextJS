@@ -15,8 +15,10 @@ import {
 const Nav: FC = () => {
     const isUserLoggedIn = true;
     const [providers, setProviders] = useState<unknown | null>(null);
+    const [toggleDropDown, setToggleDropDown] = useState<boolean>(false);
+    const signOut = () => {
 
-    const signOut = () => {}
+    }
 
     useEffect(() => {
         const setProvider = async () => {
@@ -85,6 +87,68 @@ const Nav: FC = () => {
                                 ))
                             }
                         </>
+                }
+            </div>
+            <div className='sm:hidden flex relative'>
+                {
+                    isUserLoggedIn ? (
+                        <div className='flex'>
+                            <Image
+                                onClick={() => setToggleDropDown(prev => !prev)}
+                                width={37}
+                                height={37}
+                                src="/assets/images/logo.svg"
+                                className="rounded-full"
+                                alt="profile"
+                            />
+                            {
+                                toggleDropDown &&
+                                <div className='dropdown'>
+                                    <Link
+                                        href="/profile"
+                                        className="dropdown_link"
+                                        onClick={() => setToggleDropDown(false)}
+                                    >
+                                        My Profile
+                                    </Link>
+                                    <Link
+                                        href="/create-prompt"
+                                        className="dropdown_link"
+                                        onClick={() => setToggleDropDown(false)}
+                                    >
+                                        Create Prompt
+                                    </Link>
+                                    <button
+                                        type='button'
+                                        className='mt-5 w-full black_btn'
+                                        onClick={() => {
+                                            setToggleDropDown(false);
+                                            signOut();
+                                        }}
+                                    >
+                                        Sign Out
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                    ) : (
+                        <>
+                            {
+                                providers &&
+                                Object.values(providers).map((provider) => (
+                                    <button
+                                        key={provider.name}
+                                        type='button'
+                                        onClick={() => signIn(provider.id)}
+                                        className='black_btn'
+                                    >
+                                        Sign In
+                                    </button>
+                                ))
+                            }
+                        </>
+                    )
+
                 }
             </div>
         </nav>
