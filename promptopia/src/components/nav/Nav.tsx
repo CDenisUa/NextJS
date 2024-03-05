@@ -21,12 +21,10 @@ const Nav: FC = () => {
     }
 
     useEffect(() => {
-        const setProvider = async () => {
+        (async () => {
             const response = await getProviders();
             setProviders(response)
-        }
-
-        setProvider();
+        })()
     }, []);
 
 
