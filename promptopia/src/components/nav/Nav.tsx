@@ -16,10 +16,11 @@ const Nav: FC = () => {
     const {data: session} = useSession();
     const [providers, setProviders] = useState<unknown | null>(null);
     const [toggleDropDown, setToggleDropDown] = useState<boolean>(false);
-    const signOut = () => {
 
+    const signOutHandle = () => {
+        setToggleDropDown(false);
+        signOut();
     }
-
     useEffect(() => {
         (async () => {
             const response = await getProviders();
@@ -55,7 +56,7 @@ const Nav: FC = () => {
                             <button
                                 type='button'
                                 className='outline_btn'
-                                onClick={signOut}
+                                onClick={signOutHandle}
                             >
                                 Sign Out
                             </button>
@@ -123,10 +124,7 @@ const Nav: FC = () => {
                                     <button
                                         type='button'
                                         className='mt-5 w-full black_btn'
-                                        onClick={() => {
-                                            setToggleDropDown(false);
-                                            signOut();
-                                        }}
+                                        onClick={signOutHandle}
                                     >
                                         Sign Out
                                     </button>

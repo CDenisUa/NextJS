@@ -15,38 +15,40 @@ const handler = NextAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
         }),
     ],
-    session: async ({session}: { session: Session }) => {
-        if (session.user) {
-            const sessionUser = await User.findOne({
-                email: session.user.email,
-            })
-
-            if (sessionUser) {
-                (session as CustomSession).user.id = sessionUser._id.toString();
-                return session;
-            }
-        }
-    },
-    signIn: async ({profile}: { profile: any }) => {
-        try {
-            await connectToDB();
-            const userExists = await User.findOne({
-                email: profile.email,
-            });
-
-            if (!userExists) {
-                await User.create({
-                    email: profile.email,
-                    username: profile.name.replace(" ", "").toLowerCase(),
-                    image: profile.picture
+    callbacks: {
+        session: async ({session}: { session: Session }) => {
+            if (session.user) {
+                const sessionUser = await User.findOne({
+                    email: session.user.email,
                 })
-            }
 
-            return true;
-        } catch (error) {
-            console.error(error);
-            return false;
-        }
+                if (sessionUser) {
+                    (session as CustomSession).user.id = sessionUser._id.toString();
+                    return session;
+                }
+            }
+        },
+        signIn: async ({profile}: { profile: any }) => {
+            try {
+                await connectToDB();
+                const userExists = await User.findOne({
+                    email: profile.email,
+                });
+
+                if (!userExists) {
+                    await User.create({
+                        email: profile.email,
+                        username: profile.name.replace(" ", "").toLowerCase(),
+                        image: profile.picture
+                    })
+                }
+
+                return true;
+            } catch (error) {
+                console.error(error);
+                return false;
+            }
+        },
     },
 } as NextAuthOptions);
 
