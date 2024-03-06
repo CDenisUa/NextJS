@@ -3,13 +3,12 @@
 // Core
 import {NextPage} from "next";
 import {FormEventHandler, useState} from "react";
-import {useRouter} from "next/router";
 import {useSession} from "next-auth/react";
+import {router} from "next/client";
 // Components
 import {Form} from "@/components";
 
 const CreatePrompt: NextPage = () => {
-    const router = useRouter();
     const {data: session} = useSession();
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({

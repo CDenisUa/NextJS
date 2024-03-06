@@ -37,7 +37,7 @@ const Nav: FC = () => {
                     height={30}
                     className='object-contain'
                     src='/assets/images/logo.svg'
-                    priority={false}
+                    priority={true}
                     alt='Probptopia logo'
                 />
                 <p className='logo_text'>Promptopia</p>
@@ -68,7 +68,7 @@ const Nav: FC = () => {
                                     height={37}
                                     src={session?.user?.image || "/assets/images/logo.svg"}
                                     className="rounded-full"
-                                    priority={false}
+                                    priority={true}
                                     alt="profile"
                                 />
                             </Link>
@@ -101,7 +101,7 @@ const Nav: FC = () => {
                                 height={37}
                                 src={session?.user?.image || "/assets/images/logo.svg"}
                                 className="rounded-full"
-                                priority={false}
+                                priority={true}
                                 alt="profile"
                             />
                             {
