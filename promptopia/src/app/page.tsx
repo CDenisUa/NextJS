@@ -21,7 +21,6 @@ const Home: NextPage = () => {
                 creative prompts
             </p>
             <Feed />
-
         </section>
     );
 }

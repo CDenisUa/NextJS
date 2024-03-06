@@ -4,6 +4,7 @@
 import {FC} from 'react';
 // Types
 import {FormPropTypes} from "@/components/form/Form.types";
+import Link from "next/link";
 
 const Form: FC<FormPropTypes> = (props) => {
     const {
@@ -59,6 +60,22 @@ const Form: FC<FormPropTypes> = (props) => {
                         required
                     />
                 </label>
+                <div className='flex-end mx-3 gap-4'>
+                    <Link
+                        href='/'
+                        className='text-gray-500 text-sm'
+                    >
+                        Cancel
+                    </Link>
+                    <button
+                        type='submit'
+                        disabled={submitting}
+                        className='px-5 py-1 text-sm bg-primary-orange rounded-full text-white'
+                    >
+                        {submitting ? `${type}...` : type}
+                    </button>
+
+                </div>
             </form>
         </section>
     );
