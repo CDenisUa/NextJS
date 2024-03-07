@@ -1,11 +1,10 @@
-// Types
 import { Session } from "next-auth";
 
 export interface CustomSession extends Session {
     user: {
         id: string;
-        name?: string | null;
-        email?: string | null;
-        image?: string | null;
+        name?: string | undefined;
+        email?: string | undefined;
+        image?: string | undefined;
     }
 }
