@@ -30,7 +30,7 @@ const CreatePrompt: FC = () => {
                     })
                 });
             if (response.ok) {
-                await router.push('/');
+                router.push('/');
             }
         } catch (error) {
             console.log(error)
