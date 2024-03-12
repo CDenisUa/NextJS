@@ -2,10 +2,22 @@
 import { FC } from 'react';
 // Types
 import { ProfilePropTypes } from './Profile.types';
+// Components
+import PromptCard from '@/components/prompt-card/PromptCard';
 
-const Profile: FC<ProfilePropTypes> = () => {
+const Profile: FC<ProfilePropTypes> = (props) => {
+    const {
+        name,
+        description,
+        data,
+        handleDelete,
+        handleEdit
+    } = props;
     return (
-        <div>Profile</div>
+        <section className="w-full">
+            <h1>{name} Profile</h1>
+
+        </section>
     );
 }
 

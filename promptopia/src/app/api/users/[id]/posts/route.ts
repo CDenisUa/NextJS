@@ -1,11 +1,13 @@
 // Core
-import {NextApiRequest, NextApiResponse} from "next";
 import {connectToDB} from "@/utils/database";
 // Models
 import Prompt from "@/models/prompt/prompt";
 
-export const GET = async (request: NextApiRequest, response: NextApiResponse) => {
-    const { id } = request.query;
+export const GET = async (
+    request: Request,
+    { params }: { params: { id: string } }) => {
+    const { id } = params;
+
     try {
         await connectToDB();
 
