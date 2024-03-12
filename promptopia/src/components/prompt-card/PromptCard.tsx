@@ -13,7 +13,12 @@ const PromptCard: FC<PromptCardPropTypes> = (props) => {
         handleDelete
     } = props;
 
-    const [copied, setCopied] = useState();
+    const [copied, setCopied] = useState<string>();
+    const handleCopy = () => {
+        setCopied(post.prompt);
+        navigator.clipboard.writeText(post.prompt);
+        setTimeout(() => setCopied(""), 3000);
+    };
 
     return (
         <div className='prompt_card'>
@@ -37,7 +42,7 @@ const PromptCard: FC<PromptCardPropTypes> = (props) => {
                     </div>
                     <div
                         className='copy_btn'
-                        onClick={() => {}}
+                        onClick={handleCopy}
                     >
                         <Image
                             src={copied === post.prompt ?
