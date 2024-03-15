@@ -3,20 +3,19 @@
 import {FC, useState, useEffect} from 'react';
 import {useSession} from 'next-auth/react';
 import {useRouter} from 'next/navigation';
-// Styles
-import styles from './styles.module.css';
 // Components
 import Profile from '@/components/profile/Profile';
 
 const MyProfile: FC = () => {
     const {data: session} = useSession();
+    const router = useRouter();
     const [posts, setPosts] = useState<IPost[]>([]);
-    const handleEdit = () => {
+    const handleEdit = (post: IPost) => {
+        router.push(`/update-prompt?id=${post._id}`);
     }
-    const handleDelete = async () => {
+    const handleDelete = async (post: IPost) => {
+
     }
-
-
 
     useEffect(() => {
         const fetchPosts = async () => {
