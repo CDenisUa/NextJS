@@ -1,7 +1,7 @@
 export interface ProfilePropTypes {
     name: string,
     description: string,
-    data: any[],
-    handleEdit: () => void,
-    handleDelete: () => void,
+    data: IPost[],
+    handleEdit: (arg0: IPost) => void,
+    handleDelete: (arg0:IPost) => void,
 }

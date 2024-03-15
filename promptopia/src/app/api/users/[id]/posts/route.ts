@@ -4,7 +4,7 @@ import {connectToDB} from "@/utils/database";
 import Prompt from "@/models/prompt/prompt";
 
 export const GET = async (
-    request: Request,
+    _: Request,
     { params }: { params: { id: string } }) => {
     const { id } = params;
 

@@ -10,7 +10,12 @@ type IPost = {
 }
 
 type Creator = {
+    _id: string
     image: string,
     username: string,
     email: string
+}
+
+type IParams<T extends PropertyKey> = {
+    params: Record<T, string>
 }
