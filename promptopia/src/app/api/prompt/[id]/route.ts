@@ -5,15 +5,13 @@ import Prompt from "@/models/prompt/prompt";
 
 
 // GET (read)
-export const GET = async (
-    _: Request,
-    {params}: IParams<'id'>) => {
+export const GET = async (_: Request, {params}: IParams<'id'>) => {
     const {id} = params;
 
     try {
         await connectToDB();
         const prompts = await Prompt.findById(id).populate('creator');
-        if (!prompt) return new Response("Prompt not found", {status: 404});
+        if (!prompts) return new Response("Prompt not found", {status: 404});
         return new Response(JSON.stringify(prompts), {status: 200});
     } catch (error) {
         return new Response('Failed to fetch all prompts', {status: 500});
@@ -39,6 +37,7 @@ export const PATCH = async (request: Request, {params}: IParams<'id'>) => {
         return new Response('Failed to fetch all prompts', {status: 500});
     }
 }
+
 // DELETE (delete)
 export const DELETE = async (_: Request, {params}: IParams<'id'>) => {
     const {id} = params;
