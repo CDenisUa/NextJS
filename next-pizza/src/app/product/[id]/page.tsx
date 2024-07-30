@@ -1,4 +1,9 @@
-export default function Product ()  {
+import {Button} from "@/components/ui/button";
 
-    return <div>Product</div>;
+export default function Product ()  {
+    return (
+        <div>
+            <Button variant="outline"> Basket </Button>
+        </div>
+    );
 }
