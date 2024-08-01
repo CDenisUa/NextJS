@@ -4,13 +4,13 @@ import Image from 'next/image';
 // Utils
 import {cn} from "@/lib/utils";
 // Components
-import { Container } from '@/components/shared/container/Container';
+import { Container } from '@/components/shared';
 
-const Header: FC = () => {
+export const Header: FC = () => {
     return (
         <header className={cn('border border-b')}>
             <Container className='flex items-center justify-between py-8'>
-                <div>
+                <div className='flext items-center gap-4'>
                     <Image
                         src='/logo.webp'
                         width={35}
@@ -26,5 +26,3 @@ const Header: FC = () => {
         </header>
     );
 }
-
-export default Header;

@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 // Components
-import { Container } from '@/components/shared/container/Container';
+import { Container } from '@/components/shared';
 
 test('Renders Container component with children', () => {
     render(

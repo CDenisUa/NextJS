@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 // Components
-import Header from '@/components/shared/header/Header';
+import { Header } from '@/components/shared';
 
 test('Renders Header component with logo, heading, and subheading', () => {
     render(<Header />);
