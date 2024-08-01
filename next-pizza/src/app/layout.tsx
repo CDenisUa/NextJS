@@ -4,6 +4,8 @@ import {PropsWithChildren} from 'react';
 import {Nunito} from "next/font/google";
 // Styles
 import "./globals.css";
+// Components
+import Header from "@/components/shared/header/Header";
 
 const nunito = Nunito({
     subsets: ['cyrillic'],
@@ -12,13 +14,14 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-    title: "Pizza store | Main",
+    title: "Pizza Bliss | Main",
     description: "Store implemented by Next JS",
 };
 
 const RootLayout: NextPage<PropsWithChildren> = ({children}) =>
     <html lang="en">
         <body className={nunito.className}>
+            <Header />
             <main className='min-h-screen'>
              {children}
             </main>
