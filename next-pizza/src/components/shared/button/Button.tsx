@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 const Button: FC = () => {
     return (
-        <div>Button</div>
+        <div>Button 2</div>
     );
 }
 
