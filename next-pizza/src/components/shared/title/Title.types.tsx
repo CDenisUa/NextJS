@@ -1,4 +1,4 @@
-type TitleSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+export type TitleSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export interface TitlePropTypes {
     size?: TitleSize;
