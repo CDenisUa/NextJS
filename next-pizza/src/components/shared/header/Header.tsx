@@ -51,7 +51,8 @@ export const Header: FC = () => {
                             >
                                 <ShoppingCart
                                     data-testid='icon-shopping-cart'
-                                    className='h-4 w-4 relative'
+                                    size={16}
+                                    className='relative'
                                     strokeWidth={2}
                                 />
                                 <b>3</b>
@@ -59,7 +60,7 @@ export const Header: FC = () => {
                             <ArrowRight
                                 data-testid='icon-arrow-right'
                                 size={16}
-                                className='w-5 absolute right-5 transition duration-300 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'
+                                className='absolute right-5 transition duration-300 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'
                             />
                         </Button>
                     </div>
