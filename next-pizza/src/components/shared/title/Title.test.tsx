@@ -2,12 +2,12 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 // Types
-import { TitleSize } from '@/components/shared/title/Title.types';
+import {SizesType} from '@/components/shared/title/Title.types';
 // Components
 import { Title } from '@/components/shared/title/Title';
 
 describe('Title component', () => {
-    const sizes: { size: TitleSize; tag: string; className: string }[] = [
+    const sizes: SizesType = [
         { size: 'xs', tag: 'h5', className: 'text-[16px] ys-text' },
         { size: 'sm', tag: 'h4', className: 'text-[22px] ys-text' },
         { size: 'md', tag: 'h3', className: 'text-[26px] ys-text' },
