@@ -33,3 +33,19 @@ test('Renders Container with correct className', () => {
     const containerElement = screen.getByRole('banner').firstChild;
     expect(containerElement).toHaveClass('flex', 'items-center', 'justify-between', 'py-8');
 });
+
+test('Should render all icons', () => {
+    render(<Header />);
+
+    // screen.debug();
+
+    const userIcon = screen.getByTestId('icon-user');
+    const shoppingCardIcon = screen.getByTestId('icon-shopping-cart');
+    const arrowRightIcon = screen.getByTestId('icon-arrow-right');
+
+
+    expect(userIcon).toBeInTheDocument();
+    expect(shoppingCardIcon).toBeInTheDocument();
+    expect(arrowRightIcon).toBeInTheDocument();
+});
+
