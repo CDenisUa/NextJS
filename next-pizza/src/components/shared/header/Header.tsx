@@ -1,10 +1,13 @@
 // Core
-import { FC } from 'react';
+import {FC} from 'react';
 import Image from 'next/image';
+// Images
+import {User} from "lucide-react";
 // Utils
 import {cn} from "@/lib/utils";
 // Components
-import { Container } from '@/components/shared';
+import {Container} from '@/components/shared';
+import {Button} from "@/components/ui";
 
 export const Header: FC = () => {
     return (
@@ -21,6 +24,13 @@ export const Header: FC = () => {
                         <h1 className='text-2xl uppercase font-black'>Pizza Bliss</h1>
                         <p className='text-sm text-gray-400 leading-3'>Simply Delicious Pizza</p>
                     </div>
+                </div>
+
+                <div className='flex items-center gap-3'>
+                    <Button variant='outline'>
+                        <User size={16} />
+                        Log In
+                    </Button>
                 </div>
             </Container>
         </header>
