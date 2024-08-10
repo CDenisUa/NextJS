@@ -1,7 +1,5 @@
 // Core
 import { FC } from 'react';
-// Styles
-import styles from './styles.module.css';
 // Types
 import {CategoriesPropTypes} from "@/components/shared/categories/Categories.types";
 // Mock
@@ -28,7 +26,7 @@ export const Categories: FC<CategoriesPropTypes> = (props) => {
                     <a
                         className={cn(
                             'flex items-center font-bold h11 rounded-2xl px-5',
-                            activeIndex === index && 'bg-white shadow-gray-200 text-primary'
+                            activeIndex === index && 'bg-white shadow-md shadow-gray-200 text-primary'
                         )}
                         key={index}
                     >
