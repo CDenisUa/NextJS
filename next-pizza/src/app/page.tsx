@@ -1,10 +1,9 @@
 // Core
 // Components
 import {
-    Categories,
     Container,
-    SortPopup,
-    Title
+    Title,
+    TopBar
 } from "@/components/shared";
 
 export default function Home() {
@@ -16,9 +15,8 @@ export default function Home() {
                     text='All the pizzas'
                     size='lg'
                 />
-                <Categories/>
-                <SortPopup/>
             </Container>
+            <TopBar />
         </>
     );
 }
