@@ -1,9 +1,18 @@
-import Image from "next/image";
+// Core
+// Components
+import {Container} from "@/components/shared";
+import {Title} from "@/components/shared/title/Title";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     Next Pizza
-    </main>
+      <>
+          <Container className="mt-10">
+            <Title
+                className='font-extrabold'
+                text='All the pizzas'
+                size='lg'
+            />
+          </Container>
+      </>
   );
 }
