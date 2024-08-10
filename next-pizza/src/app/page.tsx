@@ -3,6 +3,7 @@
 import {
     Categories,
     Container,
+    SortPopup,
     Title
 } from "@/components/shared";
 
@@ -15,7 +16,8 @@ export default function Home() {
                     text='All the pizzas'
                     size='lg'
                 />
-                <Categories />
+                <Categories/>
+                <SortPopup/>
             </Container>
         </>
     );
