@@ -1,16 +1,16 @@
 // Core
 import type {Metadata, NextPage} from "next";
 import {PropsWithChildren} from 'react';
-import {Nunito} from "next/font/google";
+import {Roboto} from "next/font/google";
 // Styles
 import "./globals.css";
 // Components
 import { Header } from "@/components/shared";
 
-const nunito = Nunito({
-    subsets: ['cyrillic'],
-    variable: '--font-nunito',
-    weight: ['400', '500', '600', '700', '800', '900'],
+const dm_sans = Roboto({
+    subsets: ['latin'],
+    variable: '--font-roboto',
+    weight: ["100" , "300","400","500","700","900"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const RootLayout: NextPage<PropsWithChildren> = ({children}) =>
     <html lang="en">
-        <body className={nunito.className}>
+        <body className={dm_sans.className}>
             <Header />
             <main className='min-h-screen'>
              {children}

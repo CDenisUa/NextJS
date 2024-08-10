@@ -25,7 +25,7 @@ export const Categories: FC<CategoriesPropTypes> = (props) => {
                 categoriesData.map((cat, index) => (
                     <a
                         className={cn(
-                            'flex items-center font-bold h11 rounded-2xl px-5',
+                            'flex items-center font-bold h11 rounded-2xl px-5 h-[42px]',
                             activeIndex === index && 'bg-white shadow-md shadow-gray-200 text-primary'
                         )}
                         key={index}

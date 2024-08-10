@@ -9,7 +9,7 @@ html {
 
 @layer base {
   :root {
-    --font-nunito: 'Nunito', sans-serif;
+    --font-roboto: Roboto, sans-serif;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -33,7 +33,7 @@ html {
 
   /* Set font family for all elements */
   * {
-    font-family: var(--font-nunito), sans-serif;
+    font-family: var(--font-roboto), sans-serif;
     @apply border-border;
   }
 
