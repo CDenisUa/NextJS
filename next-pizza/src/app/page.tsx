@@ -1,7 +1,9 @@
 // Core
 // Components
-import {Container} from "@/components/shared";
-import {Title} from "@/components/shared/title/Title";
+import {
+    Container,
+    Title
+} from "@/components/shared";
 
 export default function Home() {
   return (
