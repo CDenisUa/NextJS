@@ -9,7 +9,6 @@ html {
 
 @layer base {
   :root {
-    --font-roboto: Roboto, sans-serif;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -31,19 +30,15 @@ html {
     --radius: 1rem;
   }
 
-  /* Set font family for all elements */
   * {
-    font-family: var(--font-roboto), sans-serif;
     @apply border-border;
   }
 
-  /* Apply base styles to body */
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* Custom Scrollbar Styles */
 .scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -62,14 +57,12 @@ html {
   background: #dbdadd;
 }
 
-/* Utility Classes */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-/* Reduced Motion Preference */
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

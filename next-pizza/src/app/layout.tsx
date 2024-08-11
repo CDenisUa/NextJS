@@ -7,10 +7,10 @@ import "./globals.css";
 // Components
 import { Header } from "@/components/shared";
 
-const dm_sans = Roboto({
+const roboto = Roboto({
     subsets: ['latin'],
     variable: '--font-roboto',
-    weight: ["100" , "300","400","500","700","900"],
+    weight: [ "100", "300","400","500","700","900"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const RootLayout: NextPage<PropsWithChildren> = ({children}) =>
     <html lang="en">
-        <body className={dm_sans.className}>
+        <body className={roboto.className}>
             <Header />
             <main className='min-h-screen'>
              {children}
