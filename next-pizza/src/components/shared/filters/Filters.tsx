@@ -3,7 +3,10 @@ import { FC } from 'react';
 // Types
 import {FiltersPropTypes} from "@/components/shared/filters/Filters.types";
 // Components
-import {Title} from "@/components/shared";
+import {
+    FilterCheckbox,
+    Title
+} from "@/components/shared";
 
 export const Filters: FC<FiltersPropTypes> = ({className}) => {
     return (
@@ -15,7 +18,8 @@ export const Filters: FC<FiltersPropTypes> = ({className}) => {
             />
 
             <div className='flex flex-col gap-4'>
-                {/*checkboxes*/}
+                <FilterCheckbox text='' value='1'/>
+                <FilterCheckbox text='New' value='2' />
             </div>
         </div>
     );

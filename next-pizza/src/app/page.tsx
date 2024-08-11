@@ -1,7 +1,7 @@
-// Core
 // Components
 import {
     Container,
+    Filters,
     Title,
     TopBar
 } from "@/components/shared";
