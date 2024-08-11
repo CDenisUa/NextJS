@@ -19,7 +19,7 @@ export default function Home() {
             <TopBar/>
             <Container className='pb-14'>
                 <div className='flex gap-[60px]'>
-
+                    <Filters />
                 </div>
                 <div className='flex-1'>
                     <div className='flex flex-col gap-16'>

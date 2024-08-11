@@ -1,12 +1,22 @@
 // Core
 import { FC } from 'react';
-// Styles
-import styles from './styles.module.css';
+// Types
+import {FiltersPropTypes} from "@/components/shared/filters/Filters.types";
+// Components
+import {Title} from "@/components/shared";
 
-const Filters: FC = () => {
+export const Filters: FC<FiltersPropTypes> = ({className}) => {
     return (
-        <div>Filters</div>
+        <div className={className}>
+            <Title
+                text='Filters'
+                size='sm'
+                className='mb-5 font-bold'
+            />
+
+            <div className='flex flex-col gap-4'>
+                {/*checkboxes*/}
+            </div>
+        </div>
     );
 }
-
-export default Filters;
