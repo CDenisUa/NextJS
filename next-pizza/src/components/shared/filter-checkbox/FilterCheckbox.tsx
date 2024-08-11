@@ -1,7 +1,9 @@
 // Core
 import { FC } from 'react';
 // Types
-import {FilterCheckboxPropTypes} from "@/components/shared/filter-checkbox/FilterCheckbox.types";
+import {
+    FilterCheckboxPropTypes
+} from "@/components/shared/filter-checkbox/FilterCheckbox.types";
 // Components
 import {Checkbox} from "@/components/ui";
 
