@@ -13,7 +13,7 @@ export default function Home() {
                 <Title
                     className='font-extrabold'
                     text='All the pizzas'
-                    size='lg'
+                    size='md'
                 />
             </Container>
             <TopBar/>
