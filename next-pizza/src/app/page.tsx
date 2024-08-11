@@ -16,7 +16,17 @@ export default function Home() {
                     size='lg'
                 />
             </Container>
-            <TopBar />
+            <TopBar/>
+            <Container className='pb-14'>
+                <div className='flex gap-[60px]'>
+
+                </div>
+                <div className='flex-1'>
+                    <div className='flex flex-col gap-16'>
+                        Product list
+                    </div>
+                </div>
+            </Container>
         </>
     );
 }
