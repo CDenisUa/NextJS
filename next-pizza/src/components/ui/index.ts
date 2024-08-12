@@ -1,7 +1,17 @@
 // Components
 export { Button } from './button/Button';
 export { Checkbox  } from './checkbox/Checkbox';
-export { Dialog  } from './Dialog';
+export {
+    Dialog,
+    DialogTrigger,
+    DialogContent,
+    DialogTitle,
+    DialogDescription,
+    DialogClose,
+    DialogHeader,
+    DialogFooter,
+    DialogOverlay
+} from './dialog/Dialog';
 export { Drawer } from './Drawer';
 export { Input } from './Input';
 export { Popover } from './Popover';
