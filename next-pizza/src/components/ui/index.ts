@@ -1,5 +1,5 @@
 // Components
-export { Button } from './Button';
+export { Button } from './button/Button';
 export { Checkbox  } from './checkbox/Checkbox';
 export { Dialog  } from './Dialog';
 export { Drawer } from './Drawer';
