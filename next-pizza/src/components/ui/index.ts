@@ -12,7 +12,16 @@ export {
     DialogFooter,
     DialogOverlay
 } from './dialog/Dialog';
-export { Drawer } from './Drawer';
+export {
+    Drawer,
+    DrawerTrigger,
+    DrawerClose,
+    DrawerContent,
+    DrawerHeader,
+    DrawerFooter,
+    DrawerTitle,
+    DrawerDescription
+} from './drawer/Drawer';
 export { Input } from './Input';
 export { Popover } from './Popover';
 export { Select } from './Select';
