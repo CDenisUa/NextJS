@@ -34,5 +34,5 @@ export {
     SelectContent,
     SelectItem,
 } from './select/Select';
-export { Skeleton } from './Skeleton';
+export { Skeleton } from './skeleton/Skeleton';
 export { Slider } from './Slider';
