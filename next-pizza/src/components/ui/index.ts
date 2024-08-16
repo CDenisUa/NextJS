@@ -22,7 +22,7 @@ export {
     DrawerTitle,
     DrawerDescription
 } from './drawer/Drawer';
-export { Input } from './Input';
+export { Input } from './input/Input';
 export { Popover } from './Popover';
 export { Select } from './Select';
 export { Skeleton } from './Skeleton';
