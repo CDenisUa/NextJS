@@ -23,7 +23,11 @@ export {
     DrawerDescription
 } from './drawer/Drawer';
 export { Input } from './input/Input';
-export { Popover } from './Popover';
+export {
+    Popover,
+    PopoverTrigger,
+    PopoverContent
+} from './popover/Popover';
 export { Select } from './Select';
 export { Skeleton } from './Skeleton';
 export { Slider } from './Slider';
