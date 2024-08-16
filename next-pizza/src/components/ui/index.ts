@@ -28,6 +28,11 @@ export {
     PopoverTrigger,
     PopoverContent
 } from './popover/Popover';
-export { Select } from './Select';
+export {
+    Select,
+    SelectTrigger,
+    SelectContent,
+    SelectItem,
+} from './select/Select';
 export { Skeleton } from './Skeleton';
 export { Slider } from './Slider';
