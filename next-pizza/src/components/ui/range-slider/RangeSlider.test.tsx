@@ -20,4 +20,14 @@ describe('RangeSlider component', () => {
         const firstSlider = screen.getAllByRole('slider')[0];
         expect(firstSlider).toBeInTheDocument();
     });
+
+    test('Renders RangeSlider with correct value labels', () => {
+        render(<RangeSlider {...defaultProps} />);
+        const labelStart = screen.getByText('20%');
+        const labelEnd = screen.getByText('80%');
+
+        expect(labelStart).toBeInTheDocument();
+        expect(labelEnd).toBeInTheDocument();
+    });
+
 });
