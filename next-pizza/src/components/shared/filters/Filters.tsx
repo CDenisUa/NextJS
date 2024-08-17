@@ -7,7 +7,7 @@ import {
     FilterCheckbox,
     Title
 } from "@/components/shared";
-import {Input} from "@/components/ui";
+import {Input, RangeSlider} from "@/components/ui";
 
 export const Filters: FC<FiltersPropTypes> = ({className}) => {
     return (
@@ -42,6 +42,7 @@ export const Filters: FC<FiltersPropTypes> = ({className}) => {
                     />
                     <span>$</span>
                 </div>
+                <RangeSlider min={0} max={200} step={1} value={[0,200]} />
             </div>
         </div>
     );

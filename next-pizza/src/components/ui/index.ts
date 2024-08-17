@@ -36,3 +36,4 @@ export {
 } from './select/Select';
 export { Skeleton } from './skeleton/Skeleton';
 export { Slider } from './slider/Slider';
+export { RangeSlider } from './range-slider/RangeSlider';
