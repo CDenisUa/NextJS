@@ -17,7 +17,7 @@ export default function Home() {
                 />
             </Container>
             <TopBar/>
-            <Container className="pb-14">
+            <Container className="mt-10 pb-14">
                 <div className="flex gap-[60px]">
                     <div className="w-[250px]">
                         <Filters />
@@ -31,7 +31,7 @@ export default function Home() {
 
                         <div className="flex items-center gap-6 mt-12">
                             {/*<Pagination pageCount={3} />*/}
-                            <span className="text-sm text-gray-400">5 из 65</span>
+                            {/*<span className="text-sm text-gray-400">5 из 65</span>*/}
                         </div>
                     </div>
                 </div>
