@@ -43,4 +43,15 @@ describe('RangeSlider component', () => {
         expect(onValueChange).toHaveBeenCalled();
     });
 
+    test('Updates local state when external value changes', () => {
+        const { rerender } = render(<RangeSlider {...defaultProps} value={[30, 70]} />);
+
+        rerender(<RangeSlider {...defaultProps} value={[40, 60]} />);
+
+        const labelStart = screen.getByText('40%');
+        const labelEnd = screen.getByText('60%');
+
+        expect(labelStart).toBeInTheDocument();
+        expect(labelEnd).toBeInTheDocument();
+    });
 });
