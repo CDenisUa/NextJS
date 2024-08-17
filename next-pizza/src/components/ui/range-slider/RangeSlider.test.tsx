@@ -30,4 +30,17 @@ describe('RangeSlider component', () => {
         expect(labelEnd).toBeInTheDocument();
     });
 
+    test('Calls onValueChange when slider value changes', async () => {
+        const onValueChange = jest.fn();
+        render(<RangeSlider {...defaultProps} onValueChange={onValueChange} />);
+        const thumbs = screen.getAllByRole('slider');
+        const firstThumb = thumbs[0];
+
+        firstThumb.focus();
+        await userEvent.keyboard('{ArrowRight}');
+        await userEvent.keyboard('{ArrowRight}');
+
+        expect(onValueChange).toHaveBeenCalled();
+    });
+
 });
