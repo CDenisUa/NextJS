@@ -35,7 +35,7 @@ export const Filters: FC<FiltersPropTypes> = ({className}) => {
                     />
                     <Input
                         type='number'
-                        placeholder="30000"
+                        placeholder="200"
                         min={100}
                         max={200}
                         value={200}
@@ -44,6 +44,7 @@ export const Filters: FC<FiltersPropTypes> = ({className}) => {
                 </div>
                 <RangeSlider min={0} max={200} step={1} value={[0,200]} />
             </div>
+
         </div>
     );
 }
