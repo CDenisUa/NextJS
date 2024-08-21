@@ -19,8 +19,9 @@ const CheckboxFiltersGroup: FC<CheckboxFiltersGroupPropTypes> = (props) => {
         onChange,
     } = props;
 
-    const [ showAll, setShowAl] = useState(false);
+    const [ showAll, setShowAll] = useState(false);
 
+    const list = showAll ? items : defaultItems?.slice(0, limit);
     return (
         <div className={className}>
             <p className='font-bold mb-3'>{title}</p>
@@ -37,7 +38,7 @@ const CheckboxFiltersGroup: FC<CheckboxFiltersGroupPropTypes> = (props) => {
 
             <div className='flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar'>
                 {
-                    items?.map((item, index) => (
+                    list.map((item, index) => (
                         <FilterCheckbox
                             key={index}
                             text={item.text}
@@ -49,6 +50,18 @@ const CheckboxFiltersGroup: FC<CheckboxFiltersGroupPropTypes> = (props) => {
                     ))
                 }
             </div>
+            {
+                items.length > limit && (
+                    <div className={showAll ? 'border-t border-t-neutral-100 mt-4' : ''}>
+                        <button
+                            className='text-primary mt-3'
+                            onClick={() => setShowAll(prev => !prev)}
+                        >
+                            {showAll ? 'Hide' : '+ Show All'}
+                        </button>
+                    </div>
+                )
+            }
         </div>
     );
 }
