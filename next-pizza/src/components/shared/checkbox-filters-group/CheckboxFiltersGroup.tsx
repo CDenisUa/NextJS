@@ -1,6 +1,6 @@
 'use client'
 // Core
-import { FC } from 'react';
+import {FC, useState} from 'react';
 // Types
 import {CheckboxFiltersGroupPropTypes} from "@/components/shared/checkbox-filters-group/CheckboxFiltersGroup.types";
 // Components
@@ -19,15 +19,22 @@ const CheckboxFiltersGroup: FC<CheckboxFiltersGroupPropTypes> = (props) => {
         onChange,
     } = props;
 
+    const [ showAll, setShowAl] = useState(false);
+
     return (
         <div className={className}>
             <p className='font-bold mb-3'>{title}</p>
-            <div className='mb-5'>
-                <Input
-                    placeholder={searchInputPlaceholder}
-                    className='bg-gray-50 border-none'
-                />
-            </div>
+
+            {
+                showAll &&
+                <div className='mb-5'>
+                    <Input
+                        placeholder={searchInputPlaceholder}
+                        className='bg-gray-50 border-none'
+                    />
+                </div>
+            }
+
             <div className='flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar'>
                 {
                     items?.map((item, index) => (
