@@ -1,9 +1,9 @@
 // Core
 import { FC } from 'react';
-// Styles
-import styles from './styles.module.css';
+// Types
+import {CheckboxFiltersGroupPropTypes} from "@/components/shared/checkbox-filters-group/CheckboxFiltersGroup.types";
 
-const CheckboxFiltersGroup: FC = () => {
+const CheckboxFiltersGroup: FC<CheckboxFiltersGroupPropTypes> = () => {
     return (
         <div>CheckboxFiltersGroup</div>
     );
