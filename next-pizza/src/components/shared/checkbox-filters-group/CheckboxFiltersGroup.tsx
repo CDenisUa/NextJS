@@ -1,3 +1,4 @@
+'use client'
 // Core
 import { FC } from 'react';
 // Types
