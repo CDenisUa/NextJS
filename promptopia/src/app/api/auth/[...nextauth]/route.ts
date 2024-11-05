@@ -28,19 +28,27 @@ const handler = NextAuth({
                 }
             }
         },
-        signIn: async ({profile}: { profile: any }) => {
+        signIn: async ({ profile }: { profile: any }) => {
             try {
                 await connectToDB();
-                const userExists = await User.findOne({
-                    email: profile.email,
-                });
+
+                const userExists = await User.findOne({ email: profile.email });
 
                 if (!userExists) {
+                    let baseUsername = profile.name.replace(/\s+/g, "").toLowerCase();
+
+                    let uniqueUsername = baseUsername;
+                    let count = 1;
+                    while (await User.findOne({ username: uniqueUsername })) {
+                        uniqueUsername = `${baseUsername}${count}`;
+                        count += 1;
+                    }
+
                     await User.create({
                         email: profile.email,
-                        username: profile.name.replace(" ", "").toLowerCase(),
+                        username: uniqueUsername,
                         image: profile.picture
-                    })
+                    });
                 }
 
                 return true;
@@ -48,7 +56,8 @@ const handler = NextAuth({
                 console.error(error);
                 return false;
             }
-        },
+        }
+
     },
 } as NextAuthOptions);
 
