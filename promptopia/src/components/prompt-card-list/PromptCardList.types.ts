@@ -1,4 +1,4 @@
 export interface PromptCardListPropTypes {
     data: IPost[],
-    handleTagClick: () => void,
+    handleTagClick: (tag: string) => void,
 }
