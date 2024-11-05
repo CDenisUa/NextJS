@@ -33,11 +33,21 @@ NEXTAUTH_SECRET=eAydm8EXM1tAWMSvuaqB9fY+9xXwVkmyfv6CBo97fHQ=
 ```
 
 ## Starting the Container (If Removed or First Time Setup)
-
+### Unix
 ```bash
 docker run --name promptopia-mongo \
   -e MONGO_INITDB_ROOT_USERNAME=admin \
   -e MONGO_INITDB_ROOT_PASSWORD=secret \
   -p 27017:27017 \
   -d mongo:latest
+```
+
+### Windows
+```bash
+docker run `
+--name promptopia-mongo `
+-e MONGO_INITDB_ROOT_USERNAME=admin `
+-e MONGO_INITDB_ROOT_PASSWORD=secret `
+-p 27017:27017 `
+-d mongo:latest
 ```
